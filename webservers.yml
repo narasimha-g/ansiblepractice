@@ -22,7 +22,7 @@
 
    - name: install  service
      service:
-      name: apt
+      name: apache2
       state: started 
 
    
