@@ -1,0 +1,30 @@
+---
+ - name: install all webservers 
+   hosts: webservers
+   become: yes
+   gathering_facts: yes
+   tasks:
+   
+   - name: install apache2 server
+     apt: 
+      name: apache2
+      state: present 
+
+   - name: install tree server
+     apt:
+      name: tree
+      state: latest
+      
+   - name: install wget server
+     apt:
+      name: wget 
+      state: latest
+
+   - name: install  service
+     service:
+      name: apt
+      state: started 
+
+   
+
+      
