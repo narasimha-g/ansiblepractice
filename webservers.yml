@@ -4,7 +4,9 @@
    become: yes
    gather_facts: yes
    tasks:
-   
+   - name: ping my all slaves 
+     ping:
+     
    - name: install apache2 server
      apt: 
       name: apache2
