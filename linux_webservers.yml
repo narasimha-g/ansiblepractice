@@ -1,6 +1,6 @@
 ---
  - name: install linux webservers
-   hosts: webservers
+   hosts: 172.31.86.29
    become: yes
    gather_facts: true
    tasks:
