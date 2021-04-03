@@ -1,0 +1,17 @@
+---
+ - name: install linux webservers
+   hosts: webservers
+   become: yes
+   gather_facts: true
+   tasks:
+    - name: i want to install linux webservers
+      yum:
+        name: httpd
+        state: latest
+
+    - name: i want to start the service 
+      service:
+         name: httpd
+         state: started  
+
+
