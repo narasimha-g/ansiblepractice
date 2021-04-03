@@ -4,16 +4,16 @@
    become: yes
    gather_facts: true
    tasks:
-    - name: i want to install linux webservers
-      yum:
-        name: httpd
-        state: latest
-      when: ansible_os_family==RedHat"
-
-    - name: i want to start the service 
-      service:
-         name: httpd
-         state: started  
-      when: ansible_os_family==RedHat"
+   - name: install httpd 
+     yum: 
+      name: httpd 
+      state: present
+     when: ansible_os_family=="RedHat"
+      
+   - name: service httpd 
+     service: 
+      name: httpd 
+      state: started 
+     when: ansible_os_family=="RedHat"
 
 
