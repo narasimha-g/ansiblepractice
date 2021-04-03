@@ -8,10 +8,12 @@
       yum:
         name: httpd
         state: latest
+      when: ansible_os_famly==RedHat"
 
     - name: i want to start the service 
       service:
          name: httpd
          state: started  
+      when: ansible_os_famly==RedHat"
 
 
