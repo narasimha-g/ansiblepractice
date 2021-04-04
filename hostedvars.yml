@@ -25,8 +25,8 @@
       state: present 
      when: ansible_os_family=="RedHat"
 
-   - name: i want to start the service on ubuntu16.4
-     apt: 
+   - name: i want to start the service on linux 
+     service: 
       name: "{{webserverpack_linux}}"
       state: started 
      when: ansible_os_family=="RedHat"
