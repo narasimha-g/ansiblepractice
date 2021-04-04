@@ -1,3 +1,10 @@
 [webservers]
 172.31.61.56
 172.31.86.29
+
+
+
+[webservers:vars]
+webserverpack_ubuntu: apache2
+webserverpack_linux: httpd
+

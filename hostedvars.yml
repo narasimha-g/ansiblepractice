@@ -1,0 +1,32 @@
+--- 
+ - name: create variables on webservers
+   hosts: webservers
+   become: true
+   gather_facts: yes
+   tasks:
+   - name: i want to pink my all nodes
+     ping:
+
+   - name: i want to install webserver on ubuntu16.4
+     apt: 
+      name: apache2
+      state: present 
+     when: {{"webserverpack_ubuntu"}}
+
+   - name: i want to start the service on ubuntu16.4
+     service: 
+      name: apache2
+      state: started 
+     when: {{"webserverpack_ubuntu"}}
+
+   - name: i want to install webserver on linux 
+     yum: 
+      name: httpd
+      state: present 
+     when: {{"webserverpack_linux"}}
+
+   - name: i want to start the service on ubuntu16.4
+     apt: 
+      name: httpd
+      state: started 
+     when: {{"webserverpack_linux"}}
