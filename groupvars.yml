@@ -1,0 +1,32 @@
+--- 
+ - name: create variables on webservers
+   hosts: webservers
+   become: true
+   gather_facts: yes
+   tasks:
+   - name: i want to pink my all nodes
+     ping:
+
+   - name: i want to install webserver on ubuntu16.4
+     apt: 
+      name: "{{webserverpack_ubuntu}}"
+      state: present 
+     when: ansible_os_family=="Debian"
+
+   - name: i want to start the service on ubuntu16.4
+     service: 
+      name: "{{webserverpack_ubuntu}}"
+      state: started 
+     when: ansible_os_family=="Debian"
+
+   - name: i want to install webserver on linux 
+     yum: 
+      name: "{{webserverpack_linux}}"
+      state: present 
+     when: ansible_os_family=="RedHat"
+
+   - name: i want to start the service on linux 
+     service: 
+      name: "{{webserverpack_linux}}"
+      state: started 
+     when: ansible_os_family=="RedHat"
